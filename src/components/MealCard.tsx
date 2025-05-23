@@ -1,8 +1,5 @@
-import React from "react";
 
-type Props = {};
-
-const MealCard = (props: Props) => {
+const MealCard = () => {
   return <div>MealCard</div>;
 };
 
