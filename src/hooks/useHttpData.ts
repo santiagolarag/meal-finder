@@ -8,18 +8,18 @@ export default function useHttpData<T>(url: string) {
     useEffect(() => {
         let ignore = false;
         const controller = new AbortController();
-        const { signal } = controller;
+        const {signal} = controller;
 
         setLoading(true);
 
         axios
-            .get<{ meals: T[]}>(url, { signal })
-            .then(({ data }) => {
-                if(!ignore)
+            .get<{ meals: T[] }>(url, {signal})
+            .then(({data}) => {
+                if (!ignore)
                     setData(data.meals);
             })
             .finally(() => {
-                if(!ignore)
+                if (!ignore)
                     setLoading(false);
             });
 
@@ -28,5 +28,5 @@ export default function useHttpData<T>(url: string) {
             controller.abort();
         }
     }, []);
-    return { data, loading };
+    return {data, setData, loading, setLoading};
 }
