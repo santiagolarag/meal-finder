@@ -2,10 +2,11 @@ import {Button, Card, CardBody, CardFooter, Heading, Image, Text} from "@chakra-
 import type {Meal} from "../types";
 
 interface MealCardProps {
-    meal: Meal
+    meal: Meal,
+    openRecipe: () => void
 }
 
-const MealCard = ({meal}: MealCardProps) => {
+const MealCard = ({meal, openRecipe}: MealCardProps) => {
     return (
         <Card key={meal.idMeal} boxShadow="lg">
             <CardBody>
@@ -19,7 +20,11 @@ const MealCard = ({meal}: MealCardProps) => {
                 </Heading>
             </CardBody>
             <CardFooter pt="0">
-                <Button color="white" bgColor="blue.400">
+                <Button
+                    color="white"
+                    bgColor="blue.400"
+                    onClick={openRecipe}
+                >
                     See Recipe
                 </Button>
             </CardFooter>

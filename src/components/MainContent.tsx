@@ -5,10 +5,11 @@ import SkeletonCard from "./SkeletonCard.tsx";
 
 type Props = {
     meals: Meal[],
-    loading: boolean
+    loading: boolean,
+    openRecipe: (meal: Meal) => void
 };
 
-const MainContent = ({meals, loading}: Props) => {
+const MainContent = ({meals, loading, openRecipe}: Props) => {
     const skeletons: number[] = [1, 2, 3, 4, 5, 6, 7, 8]
     return (
         <SimpleGrid columns={[2, null, 3]} spacing='20px'>
@@ -19,7 +20,7 @@ const MainContent = ({meals, loading}: Props) => {
                     ))
                     :
                     meals.map((meal) => (
-                        <MealCard meal={meal} key={meal.idMeal}/>
+                        <MealCard meal={meal} key={meal.idMeal} openRecipe={() => openRecipe(meal)}/>
                     ))
             }
         </SimpleGrid>
