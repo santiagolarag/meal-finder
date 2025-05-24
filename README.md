@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Meal Finder 🍽️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Meal Finder is an interactive web application that allows you to explore a variety of meal recipes. You can browse
+through different dishes and, upon selecting one, view all its details (such as ingredients and preparation) in a
+convenient modal window.
 
-Currently, two official plugins are available:
+This project was initiated with [Vite](https://vitejs.dev/) using the React + TypeScript template.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+* **Meal Catalog:** View a list of meals with images and names.
+* **Details in Modal:** Clicking on a meal displays a modal window with detailed information, including:
+    * Ingredients and their quantities.
+    * Preparation instructions.
+    * Meal image.
+* **Intuitive Interface:** Clean and easy-to-navigate design.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Technologies Used
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+* **[React](https://reactjs.org/)**
+* **[TypeScript](https://www.typescriptlang.org/)**
+* **[Vite](https://vitejs.dev/)**
+* **[ESLint](https://eslint.org/)**
+    * The project is set up with ESLint. Core TypeScript linting is typically provided by
+      `@typescript-eslint/eslint-plugin` (you can verify this and its version in your `package.json`).
+    * The "Expanding the ESLint Configuration" section below details how to add and configure other useful plugins like
+      `eslint-plugin-react-x` and `eslint-plugin-react-dom` for React-specific rules, if they are not already part of
+      your setup.
+    * **To see all currently installed ESLint plugins and related packages, please refer to the `devDependencies`
+      section in your `package.json` file.**
+* **Dependencies**
+    * Axios
+    * Chakra UI v2.10.9
+    * React Icons
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Follow these steps to set up and run a local copy of the project.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Prerequisites
+
+Ensure you have the following installed on your system:
+
+* Node.js (v18.x or higher recommended)
+* npm (v9.x or higher) or yarn (v1.22.x or higher)
+
+### Installation
+
+1. **Clone the repository:** Note: Ensure the project path in parserOptions correctly points to your tsconfig.json file(
+   s). tsconfigRootDir helps ESLint locate these files.Adding React-Specific Lint RulesYou can also install and
+   configure plugins like eslint-plugin-react-x and eslint-plugin-react-dom for React-specific linting.First, install
+   them if they aren't already in your package.json:    (Replace `https://YOUR_REPOSITORY_URL_HERE/meal-finder.git` with
+   the actual URL of your repository)
+
+2. **Navigate to the project directory:** Then, update your eslint.config.js (or equivalent ESLint configuration file):
+   3.
+   **Install dependencies:**
+   With npm:Important: The way plugins are configured and configurations are extended can vary. Always refer to the
+   respective plugin's documentation for the most up-to-date integration instructions and ensure your ESLint
+   configuration file reflects the plugins actually installed in your package.json.
